@@ -18,8 +18,14 @@ id = args.id
 
 
 
+ 
+
 folder = '/home/jovyan/Cloud Storage/naa-vre-user-data'
 filename = 'file.txt'
+
+if (os.path.exists(folder)):
+    print('folder: ' + folder + ' exists')
+
 path = os.path.join(folder, filename)
 
 with open(path, "w", encoding="utf-8") as f:
