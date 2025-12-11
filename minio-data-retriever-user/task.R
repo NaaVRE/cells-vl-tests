@@ -115,6 +115,7 @@ Sys.setenv("AWS_S3_ENDPOINT" = conf_minio_endpoint,
            "AWS_ACCESS_KEY_ID" = secret_minio_access_key,
            "AWS_SECRET_ACCESS_KEY" = secret_minio_secret_key)
 
+# Download file from bucket S3
 if (param_use_dummy_data) {
         file_path <- paste(conf_virtual_lab_biotisan_euromarec, param_data_filename, sep="/")
         print(sprintf("Using dummy data for testing purposes. Set param_use_dummy_data to 0 to use your own data. Downloading data from %s / %s", conf_minio_public_bucket, file_path))
@@ -125,11 +126,14 @@ if (param_use_dummy_data) {
         aws.s3::save_object(bucket=conf_minio_user_bucket, object=file_path, file=param_data_filename)
 }
 
+# Load data & metadata
 metadata <- read_excel(param_data_filename, sheet = param_metadata_sheet) #Load metadata sheet
 data <- read_excel(param_data_filename, sheet = param_data_sheet) #Load data sheet
 
+# Ensure the temporary data storage directory exists
 dir.create(conf_temporary_data_directory, showWarnings = FALSE)
 
+# Write (meta)data to files
 metadata_as_csv_filename <- "metadata.csv"
 data_as_csv_filename <- "data.csv"
 metadata_from_excel_path <- paste(conf_temporary_data_directory, metadata_as_csv_filename, sep="/")
