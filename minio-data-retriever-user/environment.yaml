@@ -6,7 +6,7 @@ dependencies:
   - python>=3.8
   - nbconvert
   - r-SecretsProvider
-  - r-readxl
   - r-aws.s3
+  - r-readxl
   - papermill
   - ipykernel
