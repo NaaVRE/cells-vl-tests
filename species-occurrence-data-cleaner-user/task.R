@@ -69,5 +69,5 @@ library(tidyr)
 data = ""
 nyear = ""
 
-sites <- data %>% 
+sites <- data %>%
   filter(nyear > param_years)
