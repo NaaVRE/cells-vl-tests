@@ -8,9 +8,7 @@ library(jsonlite)
 print('option_list')
 option_list = list(
 
-make_option(c("--io"), action="store", default=NA, type="integer", help="my description"),
-make_option(c("--param_neg_decimal"), action="store", default=NA, type="numeric", help="my description"),
-make_option(c("--param_neg_num"), action="store", default=NA, type="integer", help="my description"),
+make_option(c("--io"), action="store", default=NA, type="character", help="my description"),
 make_option(c("--param_neg_string"), action="store", default=NA, type="character", help="my description"),
 make_option(c("--id"), action="store", default=NA, type="character", help="task id")
 )
@@ -53,21 +51,7 @@ print(var)
 var_len = length(var)
 print(paste("Variable io has length", var_len))
 
-io = opt$io
-print("Retrieving param_neg_decimal")
-var = opt$param_neg_decimal
-print(var)
-var_len = length(var)
-print(paste("Variable param_neg_decimal has length", var_len))
-
-param_neg_decimal = opt$param_neg_decimal
-print("Retrieving param_neg_num")
-var = opt$param_neg_num
-print(var)
-var_len = length(var)
-print(paste("Variable param_neg_num has length", var_len))
-
-param_neg_num = opt$param_neg_num
+io <- gsub("\"", "", opt$io)
 print("Retrieving param_neg_string")
 var = opt$param_neg_string
 print(var)
@@ -81,5 +65,3 @@ id <- gsub('"', '', opt$id)
 print("Running the cell")
 print(param_neg_string)
 print(io)
-print(param_neg_num)
-print(param_neg_decimal)
