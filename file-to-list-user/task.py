@@ -10,7 +10,7 @@ secret_password = os.getenv('secret_password')
 arg_parser.add_argument('--id', action='store', type=str, required=True, dest='id')
 
 
-arg_parser.add_argument('--path', action='store', type=str, required=True, dest='path')
+arg_parser.add_argument('--file_path', action='store', type=str, required=True, dest='file_path')
 
 arg_parser.add_argument('--param_with_dash', action='store', type=str, required=True, dest='param_with_dash')
 
@@ -19,7 +19,7 @@ print(args)
 
 id = args.id
 
-path = args.path.replace('"','')
+file_path = args.file_path.replace('"','')
 
 param_with_dash = args.param_with_dash.replace('"','')
 
@@ -42,7 +42,9 @@ if not param_with_dash:
     raise ValueError('param_with_dash is empty.')
 if not secret_password:
     raise ValueError('secret_password is empty.')
-with open(path) as file:
+
+
+with open(file_path) as file:
     while line := file.readline():
         lines.append(line.rstrip())
 
