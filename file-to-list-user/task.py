@@ -4,6 +4,7 @@ import json
 import os
 arg_parser = argparse.ArgumentParser()
 
+secret_password = os.getenv('secret_password')
 
 arg_parser.add_argument('--id', action='store', type=str, required=True, dest='id')
 
@@ -21,6 +22,7 @@ path = args.path.replace('"','')
 
 
 lines = []
+print(secret_password)
 with open(path) as file:
     while line := file.readline():
         lines.append(line.rstrip())
