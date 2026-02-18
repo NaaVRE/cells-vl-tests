@@ -10,6 +10,8 @@ secret_password = os.getenv('secret_password')
 arg_parser.add_argument('--id', action='store', type=str, required=True, dest='id')
 
 
+arg_parser.add_argument('--file_path', action='store', type=str, required=True, dest='file_path')
+
 arg_parser.add_argument('--param_with_dash', action='store', type=str, required=True, dest='param_with_dash')
 
 args = arg_parser.parse_args()
@@ -17,6 +19,7 @@ print(args)
 
 id = args.id
 
+file_path = args.file_path.replace('"','')
 
 param_with_dash = args.param_with_dash.replace('"','')
 
@@ -27,7 +30,7 @@ print(conf_data_folder)
 print(conf_user_folder)
 print(param_with_dash)
 print(secret_password)
-
+print(file_path)
 
 if not secret_password:
     raise ValueError('secret_password is empty.') 
