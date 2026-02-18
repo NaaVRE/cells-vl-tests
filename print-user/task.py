@@ -18,8 +18,10 @@ id = args.id
 
 
 conf_data_folder = conf_data_folder = os.path.join('/tmp', 'data')
+conf_user_folder = conf_user_folder = '/home/jovyan/Cloud Storage/naa-vre-user-data/'
 
 print(conf_data_folder)
+print(conf_user_folder)
 
 int_val = 1
 int_type = 'int'
