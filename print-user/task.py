@@ -5,6 +5,7 @@ import json
 import os
 arg_parser = argparse.ArgumentParser()
 
+secret_password = os.getenv('secret_password')
 
 arg_parser.add_argument('--id', action='store', type=str, required=True, dest='id')
 
@@ -25,6 +26,7 @@ conf_user_folder = conf_user_folder = '/home/jovyan/Cloud Storage/naa-vre-user-d
 print(conf_data_folder)
 print(conf_user_folder)
 print(param_with_dash)
+print(secret_password)
 
 int_val = 1
 int_type = 'int'
