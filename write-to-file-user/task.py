@@ -9,12 +9,15 @@ arg_parser = argparse.ArgumentParser()
 arg_parser.add_argument('--id', action='store', type=str, required=True, dest='id')
 
 
+arg_parser.add_argument('--string_val', action='store', type=str, required=True, dest='string_val')
+
 
 args = arg_parser.parse_args()
 print(args)
 
 id = args.id
 
+string_val = args.string_val.replace('"','')
 
 
 conf_data_folder = conf_data_folder = os.path.join('/tmp', 'data')
@@ -22,9 +25,7 @@ conf_user_folder = conf_user_folder = '/home/jovyan/Cloud Storage/naa-vre-user-d
 
 os.makedirs(conf_data_folder, exist_ok=True)
 
-filename = 'hello.txt'
-file_path = os.path.join(conf_user_folder, filename)
-
+file_path = os.path.join(conf_user_folder, string_val)
 
 with open(file_path, "w", encoding="utf-8") as f:
     f.write("Created using write mode.\n")
