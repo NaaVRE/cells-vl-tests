@@ -61,9 +61,7 @@ print(paste("Variable param_neg_string has length", var_len))
 param_neg_string <- gsub("\"", "", opt$param_neg_string)
 id <- gsub('"', '', opt$id)
 
-conf_starts<-"-starts with hyphen"
 
 print("Running the cell")
 print(param_neg_string)
 print(io)
-print(conf_starts)
