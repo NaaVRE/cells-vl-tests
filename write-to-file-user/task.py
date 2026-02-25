@@ -32,12 +32,6 @@ with open(file_path, "w", encoding="utf-8") as f:
     f.write("Second line.\n")
     f.write("Third line.\n")
 
-
-with open(file_path, "w", encoding="utf-8") as f:
-    f.write("Created using write mode.\n")
-    f.write("Second line.\n")
-    f.write("Third line.\n")
-
 file_file_path = open("/tmp/file_path_" + id + ".json", "w")
 file_file_path.write(json.dumps(file_path))
 file_file_path.close()
