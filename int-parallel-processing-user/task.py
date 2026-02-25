@@ -8,8 +8,6 @@ arg_parser = argparse.ArgumentParser()
 arg_parser.add_argument('--id', action='store', type=str, required=True, dest='id')
 
 
-arg_parser.add_argument('--int_val', action='store', type=int, required=True, dest='int_val')
-
 arg_parser.add_argument('--list_int_val', action='store', type=str, required=True, dest='list_int_val')
 
 
@@ -18,14 +16,13 @@ print(args)
 
 id = args.id
 
-int_val = args.int_val
 list_int_val = json.loads(args.list_int_val)
 
 
 
 new_list_int_val = []
 for elem in list_int_val:
-    new_list_int_val.append(int_val+1)
+    new_list_int_val.append(elem+1)
 
 file_new_list_int_val = open("/tmp/new_list_int_val_" + id + ".json", "w")
 file_new_list_int_val.write(json.dumps(new_list_int_val))
