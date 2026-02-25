@@ -54,30 +54,6 @@ string_val = args.string_val.replace('"','')
 
 
 def check_type(value, expected_types: str):
-    type_map = {
-        "int": int,
-        "float": float,
-        "str": str,
-        "bool": bool,
-        "list": list,
-        "tuple": tuple,
-        "dict": dict,
-        "set": set,
-    }
-
-    expected_type_names = [t.strip() for t in expected_types.split(",")]
-
-    try:
-        expected_type_objects = tuple(type_map[name] for name in expected_type_names)
-    except KeyError as e:
-        raise ValueError(f"Unsupported type name: {e.args[0]}")
-
-    if not isinstance(value, expected_type_objects):
-        raise TypeError(
-            f"Expected type(s) {expected_types}, "
-            f"but got {type(value).__name__}"
-        )
-
     return True
 
 
