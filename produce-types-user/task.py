@@ -29,8 +29,8 @@ string_type = 'str'
 list_int_val = [1,2,3]
 list_int_type = 'list'
 
-list_duble_val = [1.0,2.0,3.0]
-list_duble_type = 'list'
+list_double_val = [1.0,2.0,3.0]
+list_double_type = 'list'
 
 list_str_val = ["1","2","3"]
 list_str_type = 'list'
@@ -47,12 +47,12 @@ file_int_type.close()
 file_int_val = open("/tmp/int_val_" + id + ".json", "w")
 file_int_val.write(json.dumps(int_val))
 file_int_val.close()
-file_list_duble_type = open("/tmp/list_duble_type_" + id + ".json", "w")
-file_list_duble_type.write(json.dumps(list_duble_type))
-file_list_duble_type.close()
-file_list_duble_val = open("/tmp/list_duble_val_" + id + ".json", "w")
-file_list_duble_val.write(json.dumps(list_duble_val))
-file_list_duble_val.close()
+file_list_double_type = open("/tmp/list_double_type_" + id + ".json", "w")
+file_list_double_type.write(json.dumps(list_double_type))
+file_list_double_type.close()
+file_list_double_val = open("/tmp/list_double_val_" + id + ".json", "w")
+file_list_double_val.write(json.dumps(list_double_val))
+file_list_double_val.close()
 file_list_int_type = open("/tmp/list_int_type_" + id + ".json", "w")
 file_list_int_type.write(json.dumps(list_int_type))
 file_list_int_type.close()
