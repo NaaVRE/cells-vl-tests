@@ -8,7 +8,7 @@ arg_parser = argparse.ArgumentParser()
 arg_parser.add_argument('--id', action='store', type=str, required=True, dest='id')
 
 
-arg_parser.add_argument('--path', action='store', type=str, required=True, dest='path')
+arg_parser.add_argument('--file_path', action='store', type=str, required=True, dest='file_path')
 
 
 args = arg_parser.parse_args()
@@ -16,10 +16,12 @@ print(args)
 
 id = args.id
 
-path = args.path.replace('"','')
+file_path = args.file_path.replace('"','')
 
 
 
-with open(path, "r", encoding="utf-8") as f:
-    print(f.read())
+lines = []
+with open(file_path) as file:
+    while line := file.readline():
+        lines.append(line.rstrip())
 
