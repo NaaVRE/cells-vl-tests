@@ -8,17 +8,17 @@ arg_parser = argparse.ArgumentParser()
 arg_parser.add_argument('--id', action='store', type=str, required=True, dest='id')
 
 
+arg_parser.add_argument('--var', action='store', type=int, required=True, dest='var')
+
 
 args = arg_parser.parse_args()
 print(args)
 
 id = args.id
 
+var = args.var
 
 
 
-var = 1
+print(var)
 
-file_var = open("/tmp/var_" + id + ".json", "w")
-file_var.write(json.dumps(var))
-file_var.close()
