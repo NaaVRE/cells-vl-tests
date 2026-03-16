@@ -1,0 +1,10 @@
+name: venv
+channels:
+  - conda-forge
+dependencies:
+  - pip
+  - nbconvert
+  - pip:
+    - git+https://github.com/QCDIS/Laserfarm.git
+  - papermill
+  - ipykernel
