@@ -5,6 +5,5 @@ dependencies:
   - pip
   - nbconvert
   - numpy
-  - scipy
   - papermill
   - ipykernel
