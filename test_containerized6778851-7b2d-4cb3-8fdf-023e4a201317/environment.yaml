@@ -4,9 +4,5 @@ channels:
 dependencies:
   - pip
   - nbconvert
-  - r-httr
-  - r-Rcpp
-  - r-jsonlite
-  - r-readr
   - papermill
   - ipykernel
