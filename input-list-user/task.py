@@ -17,7 +17,7 @@ id = args.id
 
 
 
-str_list = ['a', 'b', 'c']
+str_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p','r']
 
 file_str_list = open("/tmp/str_list_" + id + ".json", "w")
 file_str_list.write(json.dumps(str_list))
