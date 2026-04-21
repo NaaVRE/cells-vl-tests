@@ -4,8 +4,8 @@ channels:
 dependencies:
   - pip
   - nbconvert
-  - r-jsonlite
   - r-readr
+  - r-jsonlite
   - r-Rcpp
   - r-httr
   - papermill
