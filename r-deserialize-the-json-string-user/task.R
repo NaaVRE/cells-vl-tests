@@ -12,7 +12,6 @@ library(jsonlite)
 print('option_list')
 option_list = list(
 
-make_option(c("--data"), action="store", default=NA, type="character", help="my description"),
 make_option(c("--json_str"), action="store", default=NA, type="character", help="my description"),
 make_option(c("--id"), action="store", default=NA, type="character", help="task id")
 )
@@ -49,17 +48,6 @@ var_serialization <- function(var){
     )
 }
 
-print("Retrieving data")
-var = opt$data
-print(var)
-var_len = length(var)
-print(paste("Variable data has length", var_len))
-
-print("------------------------Running var_serialization for data-----------------------")
-print(opt$data)
-data = var_serialization(opt$data)
-print("---------------------------------------------------------------------------------")
-
 print("Retrieving json_str")
 var = opt$json_str
 print(var)
@@ -74,8 +62,3 @@ print("Running the cell")
 deserialized_data <- fromJSON(json_str)
 
 print(deserialized_data)
-res <- all.equal(data, deserialized_data)
-
-if (!isTRUE(res)) {
-  stop(res)
-}
