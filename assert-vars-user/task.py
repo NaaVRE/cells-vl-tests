@@ -49,12 +49,12 @@ except Exception as e:
 param_string = args.param_string.replace('"','')
 param_string_with_comment = args.param_string_with_comment.replace('"','')
 
-conf_float = conf_float = 1.1
-conf_int = conf_int = 1
-conf_list_int = conf_list_int = [1, 2, 3]
-conf_list_str = conf_list_str = ['list_str', 'space in elem', '3']
 conf_string = conf_string = 'param_string value'
 conf_string_with_comment = conf_string_with_comment = 'param_string value'
+conf_int = conf_int = 1
+conf_float = conf_float = 1.1
+conf_list_int = conf_list_int = [1, 2, 3]
+conf_list_str = conf_list_str = ['list_str', 'space in elem', '3']
 
 print(done)
 
@@ -71,7 +71,6 @@ assert conf_int == check_int
 assert conf_float == check_float
 assert conf_list_int == check_list_int
 assert conf_list_str == check_list_str
-
 
 assert param_string == check_string
 assert param_string_with_comment == check_string_with_comment
