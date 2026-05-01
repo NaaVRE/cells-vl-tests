@@ -9,21 +9,19 @@ arg_parser = argparse.ArgumentParser()
 arg_parser.add_argument('--id', action='store', type=str, required=True, dest='id')
 
 
+arg_parser.add_argument('--json_str', action='store', type=str, required=True, dest='json_str')
+
 
 args = arg_parser.parse_args()
 print(args)
 
 id = args.id
 
+json_str = args.json_str.replace('"','')
 
 
 
-data = {"task": "Write Python", "number": 1, "skills": ["python", "sql"]}
+deserialized_data = json.loads(json_str)
 
-json_str = json.dumps(data)
+print(deserialized_data)
 
-print(json_str)
-
-file_json_str = open("/tmp/json_str_" + id + ".json", "w")
-file_json_str.write(json.dumps(json_str))
-file_json_str.close()
