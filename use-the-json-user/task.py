@@ -21,6 +21,7 @@ json_str = args.json_str.replace('"','')
 
 
 
+print(json_str)
 deserialized_data = json.loads(json_str)
 
 print(deserialized_data)
