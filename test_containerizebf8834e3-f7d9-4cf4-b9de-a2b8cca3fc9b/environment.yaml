@@ -1,0 +1,12 @@
+name: venv
+channels:
+  - conda-forge
+dependencies:
+  - pip
+  - nbconvert
+  - r-httr
+  - r-readr
+  - r-jsonlite
+  - r-Rcpp
+  - papermill
+  - ipykernel
