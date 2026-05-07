@@ -1,6 +1,3 @@
-# NaaVRE containerizer
-# version: V0.4
-
 import pandas as pd
 
 import argparse
