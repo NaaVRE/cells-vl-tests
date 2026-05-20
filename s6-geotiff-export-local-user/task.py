@@ -1,6 +1,3 @@
-# NaaVRE containerizer
-# version: V0.4
-
 from laserfarm import GeotiffWriter
 import os
 import pathlib
