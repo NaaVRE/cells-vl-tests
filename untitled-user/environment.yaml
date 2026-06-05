@@ -4,6 +4,9 @@ channels:
 dependencies:
   - pip
   - nbconvert
-  - numpy
+  - r-base
+  - r-dplyr
+  - r-readr
+  - r-tibble
   - papermill
   - ipykernel
