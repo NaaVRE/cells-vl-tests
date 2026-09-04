@@ -20,6 +20,8 @@ id = args.id
 secret_test_1 = 'secret'
 test_value_1 = [1.2]
 
+fdo_output = 'fdo_data'
+
 file_test_value_1 = open("/tmp/test_value_1_" + id + ".json", "w")
 file_test_value_1.write(json.dumps(test_value_1))
 file_test_value_1.close()
