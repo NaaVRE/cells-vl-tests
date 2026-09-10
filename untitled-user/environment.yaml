@@ -5,8 +5,8 @@ dependencies:
   - pip
   - nbconvert
   - r-tibble
+  - r-readr
   - r-dplyr
   - r-base
-  - r-readr
   - papermill
   - ipykernel
