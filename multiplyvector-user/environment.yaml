@@ -6,7 +6,7 @@ dependencies:
   - nbconvert
   - r-readr
   - r-httr
-  - r-jsonlite
   - r-Rcpp
+  - r-jsonlite
   - papermill
   - ipykernel
