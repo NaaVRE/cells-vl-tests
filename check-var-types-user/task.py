@@ -36,8 +36,8 @@ var_float = args.var_float
 var_int = args.var_int
 var_list_int = json.loads(args.var_list_int)
 var_list_str = json.loads(args.var_list_str)
-var_string = args.var_string
-var_string_with_comment = args.var_string_with_comment
+var_string = args.var_string.replace('"','')
+var_string_with_comment = args.var_string_with_comment.replace('"','')
 
 param_float = args.param_float
 param_int = args.param_int
