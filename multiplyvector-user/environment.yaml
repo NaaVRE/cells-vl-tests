@@ -5,8 +5,8 @@ dependencies:
   - pip
   - nbconvert
   - r-readr
-  - r-httr
   - r-Rcpp
   - r-jsonlite
+  - r-httr
   - papermill
   - ipykernel
