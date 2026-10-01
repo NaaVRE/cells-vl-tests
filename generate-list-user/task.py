@@ -9,6 +9,7 @@ arg_parser = argparse.ArgumentParser()
 arg_parser.add_argument('--id', action='store', type=str, required=True, dest='id')
 
 
+arg_parser.add_argument('--param_size', action='store', type=int, required=True, dest='param_size')
 
 args = arg_parser.parse_args()
 print(args)
@@ -16,6 +17,7 @@ print(args)
 id = args.id
 
 
+param_size = args.param_size
 
 
 n = param_size * 1024 // 8  # float64 = 8 bytes
