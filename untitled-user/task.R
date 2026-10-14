@@ -2,13 +2,29 @@ setwd('/app')
 library(optparse)
 library(jsonlite)
 
+if (!requireNamespace("dplyr", quietly = TRUE)) {
+	install.packages("dplyr", repos="http://cran.us.r-project.org")
+}
+library(dplyr)
+if (!requireNamespace("readr", quietly = TRUE)) {
+	install.packages("readr", repos="http://cran.us.r-project.org")
+}
+library(readr)
+if (!requireNamespace("tibble", quietly = TRUE)) {
+	install.packages("tibble", repos="http://cran.us.r-project.org")
+}
+library(tibble)
+if (!requireNamespace("base", quietly = TRUE)) {
+	install.packages("base", repos="http://cran.us.r-project.org")
+}
+library(base)
 
 
 
 print('option_list')
 option_list = list(
 
-make_option(c("--sum"), action="store", default=NA, type="integer", help="my description"),
+make_option(c("--dataframe_file"), action="store", default=NA, type="character", help="my description"),
 make_option(c("--id"), action="store", default=NA, type="character", help="task id")
 )
 
@@ -44,15 +60,16 @@ var_serialization <- function(var){
     )
 }
 
-print("Retrieving sum")
-var = opt$sum
+print("Retrieving dataframe_file")
+var = opt$dataframe_file
 print(var)
 var_len = length(var)
-print(paste("Variable sum has length", var_len))
+print(paste("Variable dataframe_file has length", var_len))
 
-sum = opt$sum
+dataframe_file <- gsub("\"", "", opt$dataframe_file)
 id <- gsub('"', '', opt$id)
 
 
 print("Running the cell")
-print(sum)
+summary <- readRDS(dataframe_file) %>% summarise(across(everything(), sum, .names = "{.col}_total"))
+print(summary)
