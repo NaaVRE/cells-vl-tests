@@ -8,7 +8,7 @@ arg_parser = argparse.ArgumentParser()
 arg_parser.add_argument('--id', action='store', type=str, required=True, dest='id')
 
 
-arg_parser.add_argument('--str_nums_new_lines', action='store', type=str, required=True, dest='str_nums_new_lines')
+arg_parser.add_argument('--list_nums_new_lines', action='store', type=str, required=True, dest='list_nums_new_lines')
 
 
 args = arg_parser.parse_args()
@@ -16,9 +16,9 @@ print(args)
 
 id = args.id
 
-str_nums_new_lines = json.loads(args.str_nums_new_lines)
+list_nums_new_lines = json.loads(args.list_nums_new_lines)
 
 
 
-assert str_nums_new_lines == [1, 2, 3]
+assert list_nums_new_lines == [1, 2, 3]
 
