@@ -25,3 +25,6 @@ for line in list_nums:
     print(line)
     list_nums_new_lines.append(line)
 
+file_list_nums_new_lines = open("/tmp/list_nums_new_lines_" + id + ".json", "w")
+file_list_nums_new_lines.write(json.dumps(list_nums_new_lines))
+file_list_nums_new_lines.close()
