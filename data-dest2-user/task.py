@@ -1,3 +1,4 @@
+import os
 
 import argparse
 import json
@@ -21,4 +22,6 @@ var = args.var
 
 
 res2 = var * 1
+if res2 != 1:
+    os._exit(-1)
 
