@@ -3,9 +3,6 @@ import argparse
 import json
 import os
 
-arg_parser = argparse.ArgumentParser()
-arg_parser.add_argument('--args_json', action='store', type=str, required=True, dest='args_json')
-
 def _load_json_args(file_path):
     with open(file_path, "r", encoding="utf-8") as f:
         data = json.load(f)
@@ -42,15 +39,7 @@ def _parse_value(value, field_name, target_type, elem_type=None):
             return float(value)
     arg_parser.error(field_name + " has unsupported target type")
 
-
-
-arg_parser.add_argument('--args_json', action='store', type=str, required=True, dest='args_json')
-
-args = arg_parser.parse_args()
-
-raw_args = _load_json_args(args.args_json)
-
-def get_arg_value(name):
+def get_arg_value(name,args,raw_args):
     for arg in raw_args:
         if arg['name'] == name:
             return arg['value']
@@ -120,27 +109,27 @@ arg_value = get_arg_value(arg_name,args,raw_args)
 arg_type = str
 var_string_with_comment = _parse_value(arg_value, arg_name, arg_type)
 arg_name = 'param_float'
-arg_value = get_arg_value(arg_name)
+arg_value = get_arg_value(arg_name,args,raw_args)
 arg_type = float
 param_float = _parse_value(arg_value, arg_name, arg_type)
 arg_name = 'param_int'
-arg_value = get_arg_value(arg_name)
+arg_value = get_arg_value(arg_name,args,raw_args)
 arg_type = int
 param_int = _parse_value(arg_value, arg_name, arg_type)
 arg_name = 'param_list_int'
-arg_value = get_arg_value(arg_name)
+arg_value = get_arg_value(arg_name,args,raw_args)
 arg_type = list
 param_list_int = _parse_value(arg_value, arg_name, arg_type)
 arg_name = 'param_list_str'
-arg_value = get_arg_value(arg_name)
+arg_value = get_arg_value(arg_name,args,raw_args)
 arg_type = list
 param_list_str = _parse_value(arg_value, arg_name, arg_type)
 arg_name = 'param_string'
-arg_value = get_arg_value(arg_name)
+arg_value = get_arg_value(arg_name,args,raw_args)
 arg_type = str
 param_string = _parse_value(arg_value, arg_name, arg_type)
 arg_name = 'param_string_with_comment'
-arg_value = get_arg_value(arg_name)
+arg_value = get_arg_value(arg_name,args,raw_args)
 arg_type = str
 param_string_with_comment = _parse_value(arg_value, arg_name, arg_type)
 
