@@ -3,10 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - pip
+  - python>=3.8
   - nbconvert
-  - r-readr
-  - r-dplyr
-  - r-tibble
-  - r-base
   - papermill
   - ipykernel
