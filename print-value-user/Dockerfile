@@ -1,14 +1,3 @@
-FROM ghcr.io/naavre/flavors/naavre-fl-vanilla-cell-build:latest AS build
+FROM ghcr.io/naavre/binder-builds/naavre-2dvl-2dopenlab-d7acf3:8fcfe566848b077419e0743a6eb2b00b50ec1e40
 COPY --chown=$MAMBA_USER:$MAMBA_USER environment.yaml .
-RUN micromamba install -y -n venv -f environment.yaml
-ARG MAMBA_DOCKERFILE_ACTIVATE=1
-USER root
-RUN conda-pack -p /opt/conda/envs/venv -o /tmp/env.tar && \
-    mkdir /venv && cd /venv && tar xf /tmp/env.tar && \
-    rm /tmp/env.tar
-RUN /venv/bin/conda-unpack
-
-FROM ghcr.io/naavre/flavors/naavre-fl-vanilla-cell-runtime:latest AS runtime
-COPY --from=build /venv /venv
-WORKDIR /app
-COPY . .
+RUN micromamba install -y -n notebook -f environment.yaml
