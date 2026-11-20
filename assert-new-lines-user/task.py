@@ -77,5 +77,21 @@ new_lines = _parse_value(arg_value, arg_name, arg_type)
 arg_value = get_arg_value('id',args,raw_args)
 id = _parse_value(arg_value, 'id', str)
 
-assert new_lines == ['a_processed' , 'b_processed', 'c_processed' 'd_processed', 'e_processed', 'f_processed', 'g_processed','h_processed', 'i_processed','j_processed','k_processed', 'l_processed', 'm_processed', 'n_processed', 'o_processed','r_processed']
+assert new_lines == ["a_processed",
+"b_processed",
+"c_processed",
+"d_processed",
+"e_processed",
+"f_processed",
+"g_processed",
+"h_processed",
+"i_processed",
+"j_processed",
+"k_processed",
+"l_processed",
+"m_processed",
+"n_processed",
+"o_processed",
+"p_processed",
+"r_processed"]
 
