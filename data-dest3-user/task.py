@@ -75,7 +75,7 @@ arg_type = int
 var = _parse_value(arg_value, arg_name, arg_type)
 arg_name = 'var2'
 arg_value = get_arg_value(arg_name,args,raw_args)
-arg_type = None
+arg_type = int
 var2 = _parse_value(arg_value, arg_name, arg_type)
 
 
