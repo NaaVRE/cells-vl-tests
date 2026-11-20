@@ -69,7 +69,7 @@ for arg in raw_args:
 
 arg_name = 'a_list'
 arg_value = get_arg_value(arg_name,args,raw_args)
-arg_type = None
+arg_type = list
 a_list = _parse_value(arg_value, arg_name, arg_type)
 
 
