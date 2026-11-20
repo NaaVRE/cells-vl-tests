@@ -175,13 +175,18 @@ new_lines <- parse_value(arg_value, arg_name, arg_type)
 arg_value <- get_arg_value("id", opt, raw_args_list)
 id <- parse_value(arg_value, "id", "str")
 
-stopifnot(
-  identical(
-    new_lines,
-    c('a_processed', 'b_processed', 'c_processed', 'd_processed',
-      'e_processed', 'f_processed', 'g_processed', 'h_processed',
-      'i_processed', 'j_processed', 'k_processed', 'l_processed',
-      'm_processed', 'n_processed', 'o_processed', 'p_processed',
-      'r_processed')
-  )
+expected_lines <- c(
+  'a_processed', 'b_processed', 'c_processed', 'd_processed',
+  'e_processed', 'f_processed', 'g_processed', 'h_processed',
+  'i_processed', 'j_processed', 'k_processed', 'l_processed',
+  'm_processed', 'n_processed', 'o_processed', 'p_processed',
+  'r_processed'
 )
+
+cat("Missing lines:\n")
+print(setdiff(expected_lines, new_lines))
+
+cat("Unexpected lines:\n")
+print(setdiff(new_lines, expected_lines))
+
+stopifnot(identical(new_lines, expected_lines))
