@@ -178,12 +178,12 @@ id <- parse_value(arg_value, "id", "str")
 print(class(new_lines))
 print(typeof(new_lines))
 
-converted_lines <- as.character(unlist(new_lines))
+
 
 stopifnot(
   identical(
-    converted_lines,
-    c('a_processed', 'b_processed', 'c_processed', 'd_processed',
+    new_lines,
+    list('a_processed', 'b_processed', 'c_processed', 'd_processed',
       'e_processed', 'f_processed', 'g_processed', 'h_processed',
       'i_processed', 'j_processed', 'k_processed', 'l_processed',
       'm_processed', 'n_processed', 'o_processed', 'p_processed',
