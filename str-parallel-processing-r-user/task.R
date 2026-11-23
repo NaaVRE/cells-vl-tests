@@ -175,7 +175,7 @@ str_list <- parse_value(arg_value, arg_name, arg_type)
 arg_value <- get_arg_value("id", opt, raw_args_list)
 id <- parse_value(arg_value, "id", "str")
 
-new_lines <- c()
+new_lines <- list()
 
 for (line in str_list) {
   line <- paste0(line, "_processed")
