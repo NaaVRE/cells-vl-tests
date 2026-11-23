@@ -170,7 +170,7 @@ for (arg in raw_args_list) {
 arg_value <- get_arg_value("id", opt, raw_args_list)
 id <- parse_value(arg_value, "id", "str")
 
-str_list <- c('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
+str_list <- list('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
               'j', 'k', 'l', 'm', 'n', 'o', 'p', 'r')
 # capturing outputs
 print('Serialization of str_list')
