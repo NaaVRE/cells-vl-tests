@@ -175,12 +175,23 @@ new_lines <- parse_value(arg_value, arg_name, arg_type)
 arg_value <- get_arg_value("id", opt, raw_args_list)
 id <- parse_value(arg_value, "id", "str")
 
+print('-------new_lines-------')
+for (line in new_lines) {
+  print(line)
+}
+
 print(class(new_lines))
 print(typeof(new_lines))
 
 coverted_lines <- as.list(new_lines)
+print('-------coverted_lines-------')
+for (line in coverted_lines) {
+  print(line)
+}
 
+print('-------typeof(coverted_lines)-------')
 print(typeof(coverted_lines))
+print('-------class(coverted_lines)-------')
 print(class(coverted_lines))
 
 
@@ -195,9 +206,9 @@ expected_lines <- list(
 
 
 diff <- all.equal(coverted_lines, expected_lines)
-
+print('-------diff-------')
 print(diff)
-
+print('-------identical-------')
 print(identical(coverted_lines, expected_lines))
 
 stopifnot(
