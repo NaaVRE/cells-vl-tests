@@ -2,22 +2,6 @@ setwd('/app')
 library(optparse)
 library(jsonlite)
 
-if (!requireNamespace("dplyr", quietly = TRUE)) {
-	install.packages("dplyr", repos="http://cran.us.r-project.org")
-}
-library(dplyr)
-if (!requireNamespace("readr", quietly = TRUE)) {
-	install.packages("readr", repos="http://cran.us.r-project.org")
-}
-library(readr)
-if (!requireNamespace("tibble", quietly = TRUE)) {
-	install.packages("tibble", repos="http://cran.us.r-project.org")
-}
-library(tibble)
-if (!requireNamespace("base", quietly = TRUE)) {
-	install.packages("base", repos="http://cran.us.r-project.org")
-}
-library(base)
 
 load_json_args <- function(file_path) {
   data <- jsonlite::fromJSON(file_path)
@@ -147,7 +131,7 @@ raw_args_list <- normalize_raw_args(raw_args)
 # build expected arg names set and validate provided args
 expected_arg_names <- character(0)
 
-expected_arg_names <- unique(c(expected_arg_names, "dataframe_file"))
+expected_arg_names <- unique(c(expected_arg_names, "sum"))
 
 
 expected_arg_names <- unique(c(expected_arg_names, "id"))
@@ -180,10 +164,10 @@ for (arg in raw_args_list) {
     }
   }
 }
-arg_name <- "dataframe_file"
+arg_name <- "sum"
 arg_value <- get_arg_value(arg_name, opt, raw_args_list)
-arg_type <- "str"
-dataframe_file <- parse_value(arg_value, arg_name, arg_type)
+arg_type <- "int"
+sum <- parse_value(arg_value, arg_name, arg_type)
 
 
 
@@ -191,5 +175,4 @@ dataframe_file <- parse_value(arg_value, arg_name, arg_type)
 arg_value <- get_arg_value("id", opt, raw_args_list)
 id <- parse_value(arg_value, "id", "str")
 
-summary <- readRDS(dataframe_file) %>% summarise(across(everything(), sum, .names = "{.col}_total"))
-print(summary)
+print(sum)
